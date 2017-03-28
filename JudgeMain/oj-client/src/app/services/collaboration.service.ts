@@ -24,7 +24,7 @@ export class CollaborationService {
       console.log("collaboration : editor changes by" + delta);
       delta = JSON.parse(delta);
       editor.lastAppliedChanged = delta;
-      if (this.auth.authenticated())  //Do not apply change, if not login
+      //if (this.auth.authenticated())  //Do not apply change, if not login
         editor.getSession().getDocument().applyDeltas([delta]);
     });
 
@@ -49,7 +49,7 @@ export class CollaborationService {
           + "{ position: absolute; background:" + COLORS[this.clientNum] + ";"
           + " z-index:100; width:2px !important;}";
 
-        if(this.auth.authenticated())   //Do not apply change, if not login
+        //if(this.auth.authenticated())   //Do not apply change, if not login
           document.body.appendChild(css);
         this.clientNum++;
       }
@@ -76,7 +76,7 @@ export class CollaborationService {
   }
 
   restoreBuffer(): void {
-    if (this.auth.authenticated())
+    //if (this.auth.authenticated())
       this.collaborationSocket.emit("restoreBuffer");
   }
 }

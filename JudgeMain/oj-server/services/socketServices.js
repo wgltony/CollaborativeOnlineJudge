@@ -101,7 +101,7 @@ module.exports = function (io) {
 
         function forwardEvents(socketId, eventName, dataString) {
             //console.log(JSON.parse(dataString)['userLogin']);
-            if (JSON.parse(dataString)['userLogin']) {
+            //if (JSON.parse(dataString)['userLogin']) {
                 JSON.stringify(dataString);
                 console.log(eventName + socketIdToSessionId[socketId] + " : " + dataString);
                 let sessionId = socketIdToSessionId[socketId];
@@ -116,9 +116,9 @@ module.exports = function (io) {
                 } else {
                     console.log("WARNING: Could not tie socketId to any collaboration");
                 }
-            }else{
-                console.log("Unauthorized user, save data to local. ")
-            }
+            //}else{
+            //    console.log("Unauthorized user, save data to local. ")
+            //}
         }
 
     })
