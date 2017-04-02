@@ -1,4 +1,4 @@
-fuser -k 80/tcp
+fuser -k 3000/tcp
 fuser -k 5000/tcp
 fuser -k 5001/tcp
 fuser -k 5002/tcp
@@ -7,7 +7,7 @@ service nginx start
 service redis_6379 start
 cd ./oj-server
 npm install
-nodemon server.js &
+node server.js &
 cd ../oj-client
 npm install
 ng build --watch &
@@ -21,7 +21,7 @@ python executor_server.py 5002 &
 echo "================================================="
 read -p "PRESS [ENTER] TO TERMINATE PROCESSES." PRESSKEY
 
-fuser -k 80/tcp
+fuser -k 3000/tcp
 fuser -k 5000/tcp
 fuser -k 5001/tcp
 fuser -k 5002/tcp
