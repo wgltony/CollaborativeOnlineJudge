@@ -27,7 +27,7 @@ app.use('/', function(req, res) {
 
 var server = http.createServer(app);
 io.attach(server);
-server.listen(3000);
+server.listen(80);
 server.on('error', onError);
 server.on('listening', onListening);
 
@@ -41,5 +41,5 @@ function onListening(error) {
     var bind = typeof addr === 'string' ?
         'pipe' + addr :
         'port' + addr.port;
-    console.log("Listening On 3000");
+    console.log("Listening On 80");
 }
