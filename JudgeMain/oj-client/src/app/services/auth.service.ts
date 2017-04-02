@@ -26,7 +26,7 @@ export class AuthService {
         } else {
           localStorage.setItem('profile', JSON.stringify(profile));
           localStorage.setItem('id_token', id_token);
-          location.reload(); // reload to refresh ace editor to get buffered data
+          //location.reload(); // reload to refresh ace editor to get buffered data
           resolve(profile);
         }
       });
