@@ -9,5 +9,5 @@ server{
   server_name executor;
   location / {
     proxy_pass http://executor;
-  } 
+  }
 }

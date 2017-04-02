@@ -17,7 +17,7 @@ def build_and_run():
         return "You should provide both 'code' and 'langauage'"
     code = data['code']
     lang = data['lang']
-    print "API got called with code %s in %s" % (code, lang)
+    print "API got called with code %s in %s on port: %d" % (code, lang, port)
 
     result = eu.build_and_run(code, lang)
     return jsonify(result)
